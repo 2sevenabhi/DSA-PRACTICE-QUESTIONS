@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+int n=nums.size();
+k%=n;      //to ensures the range as k can be larger than the size of array 
+
+        
+     /*  1st Naive Approach
+        int n=nums.size();
+        k%=n;       //to move upto only required element 
+        for(int i=0;i<k;i++){
+            int last=nums[nums.size()-1];  
+            for(int j=n-1;j>0;j--){
+                nums[j]=nums[j-1];
+            }
+            nums[0]=last;
+        }
+        */
+        //Optimal Approach
+
+        reverse(nums.begin(),nums.end());       
+        reverse(nums.begin(),nums.begin()+k);  
+        reverse(nums.begin()+k,nums.end());     
+    }
+};

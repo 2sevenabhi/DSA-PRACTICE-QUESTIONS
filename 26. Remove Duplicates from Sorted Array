@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+       
+        int k=1;
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]!=nums[i-1]){   //if the condition is true unique element is found!!
+                nums[k]=nums[i];       //put unique value to kth position and increment k for next unique find
+                k++;
+            }
+
+        }
+        return k;
+    }
+};
